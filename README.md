@@ -46,11 +46,12 @@ Go to 'Manage Jenkins' > ''Global Tool Configuration'
 <img src="/images/manage_jenkins1.png" alt="Manage Jenkins"
 	title="Manage Jenkins " width="550"/>
  	
-
 <img src="/images/manage_jenkins2.png" alt="Manage Jenkins"
 	title="Manage Jenkins " width="550"/>	
 
 In 'JDK' slect 'Add JDK', unselect 'Install automatically' and enter in 'Name' : 'openjdk-11' in 'JAVA_HOME' : '/usr/lib/jvm/java-11-openjdk-amd64/' and press 'Apply'
+
+
 <img src="/images/manage_jenkins3.png" alt="Manage Jenkins"
 	title="Manage Jenkins " width="550"/>	
 
