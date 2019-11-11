@@ -1,10 +1,11 @@
 # jenkins-docker
 
-## Build and Configure
+## Build
 To build:
 ```
 docker build -t jenkins .
 ```
+## Run
 
 To run:
 ```
@@ -15,7 +16,9 @@ To run:
   docker container run -it --name jenkins -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home jenkins
  ```
  
+ ## Configure
 
+### First boot
 You should get the password  for the first login in the terminal
 
 <img src="/images/start-docker.png" alt="password"
@@ -36,8 +39,8 @@ Create the first admin user:
 
 <img src="/images/first-dmin-user.png" alt="first-dmin-user"
 	title="Create the first admin user " width="550"/>
-	
-Add openjdk and Maven
+
+### Add openjdk and Maven
 
 Go to 'Manage Jenkins' > ''Global Tool Configuration' 
 <img src="/images/manage_jenkins1.png" alt="Manage Jenkins"
@@ -56,5 +59,18 @@ Scroll down and go to the Maven section  and enter in 'Name' : 'maven-3.6.2', se
 
 <img src="/images/add_maven.png" alt="add_maven"
 	title="add_maven" width="550"/>	
+ 
+ ### Set Master 'docker' label
+ To be able to run tasks with nodes labaled 'docker' we'll add it to the master
+ 
+ Go to 'Manage Jenkins' > ''Global Tool Configuration' 
+<img src="/images/manage_jenkins1.png" alt="Manage Jenkins"
+	title="Manage Jenkins " width="550"/>
+	
+ Select 'Manage Nodes'
+ /jvm/java-11-openjdk-amd64/' and press 'Apply'
+<img src="/images/tag_master0.png" alt="Tag Master"
+	title="Tag Master" width="550"/>	
+	
  
  
