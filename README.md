@@ -72,9 +72,7 @@ Scroll down and go to the Maven section  and enter in 'Name' : 'maven-3.6.2', se
 <img src="/images/tag_master0.png" alt="Tag Master"
 	title="Tag Master" width="550"/>	
 	
-	
  Select the master
- /jvm/java-11-openjdk-amd64/' and press 'Apply'
 <img src="/images/tag_master1.png" alt="Tag Master"
 	title="Tag Master" width="550"/>
 	
