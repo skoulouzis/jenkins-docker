@@ -84,5 +84,6 @@ Scroll down and go to the Maven section  and enter in 'Name' : 'maven-3.6.2', se
  In the 'Lables' add docker and press 'Save'
 <img src="/images/tag_master3.png" alt="Tag Master"
 	title="Tag Master" width="550"/>	
+	
  
  
