@@ -1,44 +1,21 @@
-apiVersion: apps/v1
+apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  creationTimestamp: null
+  name: jenkins
   labels:
     app: jenkins
-  name: jenkins
 spec:
-  progressDeadlineSeconds: 2147483647
-  replicas: 1
-  revisionHistoryLimit: 2147483647
   selector:
     matchLabels:
       app: jenkins
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
+  replicas: 1
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: jenkins
     spec:
       containers:
-      - image: alogo53/jenkins
-        imagePullPolicy: Always
-        name: jenkins
+      - name: master
+        image: alogo53/jenkins
         ports:
-        - containerPort: 8080
-          protocol: TCP
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-        volumeMounts:
-        - mountPath: /var/run/docker.sock
-          name: /var/run/docker.sock
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
-status: {}
+        - containerPort: 6379
