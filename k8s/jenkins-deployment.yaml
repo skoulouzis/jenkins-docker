@@ -10,11 +10,15 @@ spec:
   template:
     metadata:
       labels:
-        app: sjenkins
+        app: jenkins
     spec:
       containers:
       - image: alogo53/jenkins
         name: jenkins
+#         volumeDevices
+        volumeMounts: 
+        - name: /var/run/docker.sock
+          mountPath: /var/run/docker.sock     
         ports:
         - containerPort: 8080
         resources: {}
