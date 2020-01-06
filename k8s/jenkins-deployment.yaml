@@ -1,22 +1,22 @@
-apiVersion: apps/v1 
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: jenkins
   labels:
-    app: jenkins
+    app: swagger-spring-example
+  name: swagger-spring-example
 spec:
-  selector:
-    matchLabels:
-      app: jenkins
   replicas: 1
+  strategy: {}
   template:
     metadata:
       labels:
-        app: jenkins
+        app: swagger-spring-example
     spec:
       containers:
-      - name: jenkins
-        image: alogo53/jenkins
+      - image: my_docker_reposetory/swagger-spring-example:1.0.0
+        name: swagger-spring-example
         ports:
-        - port: 8080
-          nodePort: 30000
+        - containerPort: 8080
+        resources: {}
+      restartPolicy: Always
+status: {}
