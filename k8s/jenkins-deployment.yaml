@@ -15,7 +15,7 @@ spec:
         app: jenkins
     spec:
       containers:
-      - name: master
+      - name: jenkins
         image: alogo53/jenkins
         ports:
         - containerPort: 6379
