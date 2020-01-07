@@ -27,6 +27,10 @@ spec:
       - image: alogo53/jenkins
         imagePullPolicy: Always
         name: jenkins
+        volumeMounts:
+        - mountPath: /var/run/docker.sock
+          name: /var/run/docker.sock
+        
         ports:
         - containerPort: 8080
           protocol: TCP
