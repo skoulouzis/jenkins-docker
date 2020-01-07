@@ -14,4 +14,19 @@ RUN echo 'deb http://ftp.debian.org/debian stretch-backports main' | tee /etc/ap
 RUN wget https://updates.jenkins-ci.org/latest/jenkins.war
 RUN cp jenkins.war /usr/share/jenkins
 
+# RUN rm jenkins_keystore.jks
+# ARG JENKINS_KEYSTORE_URL 
+# RUN wget $JENKINS_KEYSTORE_URL -o jenkins_keystore.jks
+# RUN mkdir -p /etc/jenkins
+# RUN cp jenkins_keystore.jks /etc/jenkins/
+# 
+# #configure permissions to secure your keystore
+# RUN chown -R jenkins: /etc/jenkins
+# RUN chmod 700 /etc/jenkins
+# RUN chmod 600 /etc/jenkins/jenkins_keystore.jks
+# RUN ls /etc/
+# 
 RUN usermod -aG docker jenkins
+
+# docker build --build-arg some_variable_name=a_value
+# sudo docker build --build-arg JENKINS_KEYSTORE_URL=https://github.com/skoulouzis/jenkins-docker/raw/master/jenkins_keystore.jks -t jenkins .
